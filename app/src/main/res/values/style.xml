@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Quiz" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackGround</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+    </style>
+
+    <style name="Widget.Quiz.TextInputLayer.Weight" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/textInputLayoutBorder</item>
+        <item name="hintTextColor">@color/textColorPrimary</item>
+        <item name="hintTextAppearance">?android:attr/textColorPrimary</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="Widget.Quiz.Button" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+</resources>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuizSpeed</string>
+    <string name="main_title_textbox">QuizSpeed</string>
+    <string name="nom_joueur1">Nom du premier joueur</string>
+    <string name="nom_joueur2">Nom du deuxième joueur</string>
+    <string name="main_strart">Commencer</string>
 </resources>

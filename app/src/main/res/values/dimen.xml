@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Activité principale -->
+    <dimen name="main_titre_size">30sp</dimen>
+    <dimen name="main_texte_size">20sp</dimen>
+    <dimen name="main_text_button">15sp</dimen>
+    <dimen name="main_taille_image">64dp</dimen>
+    <dimen name="main_margin_standard">30dp</dimen>
+    <dimen name="main_margin_bord">5dp</dimen>
+    <dimen name="main_margin_espacement">10dp</dimen>
+    <dimen name="main_taille_image_paysage">128dp</dimen>
+
+    <!--Activité résultat -->
+    <dimen name="result_texte_size">40sp</dimen>
+    <dimen name="result_margin">20dp</dimen>
+</resources>
