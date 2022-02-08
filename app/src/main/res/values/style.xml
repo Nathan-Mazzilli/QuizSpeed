@@ -19,5 +19,6 @@
     <style name="Widget.Quiz.Button" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:visibility">visible</item>
     </style>
 </resources>

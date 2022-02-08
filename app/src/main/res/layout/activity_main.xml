@@ -41,20 +41,29 @@
             android:textSize="@dimen/main_titre_size"
             android:textColor="@color/textInputLayoutBorder"
             android:textStyle="bold" />
+    <Button
+        android:id="@+id/containedButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/main_ajoutJoueur" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/main_margin_standard"
         android:text="@string/nom_joueur1"
-        android:textSize="@dimen/main_texte_size" />
+        android:textSize="@dimen/main_texte_size"
+        android:visibility="invisible"/>
 
     <com.google.android.material.textfield.TextInputLayout
         style = "@style/Widget.Quiz.TextInputLayer.Weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_margin_standard"
-        android:layout_marginEnd="@dimen/main_margin_standard">
+        android:layout_marginEnd="@dimen/main_margin_standard"
+        android:visibility="invisible">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/main_joueur1_edittext"
