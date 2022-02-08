@@ -79,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        BT_Commencer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gameActivity = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(gameActivity);
+            }
+        });
         ET_Joueur1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
