@@ -42,7 +42,7 @@
             android:textColor="@color/textInputLayoutBorder"
             android:textStyle="bold" />
     <Button
-        android:id="@+id/containedButton2"
+        android:id="@+id/main_boutonAjouter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -50,38 +50,44 @@
         android:text="@string/main_ajoutJoueur" />
 
     <TextView
+        android:id="@+id/main_TextView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/main_margin_standard"
         android:text="@string/nom_joueur1"
         android:textSize="@dimen/main_texte_size"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
 
     <com.google.android.material.textfield.TextInputLayout
         style = "@style/Widget.Quiz.TextInputLayer.Weight"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_margin_standard"
         android:layout_marginEnd="@dimen/main_margin_standard"
-        android:visibility="invisible">
+        android:visibility="visible">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/main_joueur1_edittext"
+            app:helperTextEnabled="true"
+            app:helperText="nom du joueur"
             android:layout_width="match_parent"
+            android:id="@+id/main_joueur1_edittext"
             android:layout_height="wrap_content"
             android:textSize="@dimen/main_texte_size"
             android:maxLines="1"
             android:textAlignment="center"
+            android:inputType="text"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
     <TextView
+        android:id="@+id/main_TextView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/main_margin_standard"
         android:text="@string/nom_joueur2"
         android:textSize="@dimen/main_texte_size"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
 
     <com.google.android.material.textfield.TextInputLayout
         style = "@style/Widget.Quiz.TextInputLayer.Weight"
@@ -89,18 +95,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_margin_standard"
         android:layout_marginEnd="@dimen/main_margin_standard"
-        android:visibility="invisible">
+        android:visibility="visible">
 
 
         <com.google.android.material.textfield.TextInputEditText
+            app:helperTextEnabled="true"
+            app:helperText="nom du joueur"
             android:id="@+id/main_joueur2_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/main_texte_size"
             android:maxLines="1"
             android:textAlignment="center"
+            android:inputType="text"
             />
-
+o-m
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -109,12 +118,13 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/containedButton"
+            android:id="@+id/main_boutonCommencer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:text="@string/main_strart" />
+            android:text="@string/main_strart"
+            android:enabled="false"/>
     </LinearLayout>
 
 </LinearLayout>
