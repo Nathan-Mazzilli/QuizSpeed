@@ -26,6 +26,22 @@ public class MainActivity extends AppCompatActivity {
     private Button BT_Ajouter;
     private Button BT_Commencer;
 
+    private void getId(){
+        TV_Joueur1 = findViewById(R.id.main_TextView1);
+        TV_Joueur2 = findViewById(R.id.main_TextView2);
+        ET_Joueur1 = findViewById(R.id.main_joueur1_edittext);
+        ET_Joueur2 = findViewById(R.id.main_joueur2_edittext);
+        BT_Ajouter = findViewById(R.id.main_boutonAjouter);
+        BT_Commencer = findViewById(R.id.main_boutonCommencer);
+    }
+
+    private void putInvisible(){
+        TV_Joueur1.setVisibility(View.INVISIBLE);
+        ET_Joueur1.setVisibility(View.INVISIBLE);
+        ET_Joueur2.setVisibility(View.INVISIBLE);
+        TV_Joueur2.setVisibility(View.INVISIBLE);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,18 +49,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar mainMenu = findViewById(R.id.main_menu);
         setSupportActionBar(mainMenu);
 
-        TV_Joueur1 = findViewById(R.id.main_TextView1);
-        TV_Joueur2 = findViewById(R.id.main_TextView2);
-        ET_Joueur1 = findViewById(R.id.main_joueur1_edittext);
-        ET_Joueur2 = findViewById(R.id.main_joueur2_edittext);
-        BT_Ajouter = findViewById(R.id.main_boutonAjouter);
-        BT_Commencer = findViewById(R.id.main_boutonCommencer);
-
-        TV_Joueur1.setVisibility(View.INVISIBLE);
-        ET_Joueur1.setVisibility(View.INVISIBLE);
-        ET_Joueur2.setVisibility(View.INVISIBLE);
-        TV_Joueur2.setVisibility(View.INVISIBLE);
-
+        getId();
+        putInvisible();
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,7 +88,10 @@ public class MainActivity extends AppCompatActivity {
         BT_Commencer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ET_Joueur1.setVisibility(View.VISIBLE);
                 Intent gameActivity = new Intent(MainActivity.this, GameActivity.class);
+                gameActivity.putExtra("Joueur1", ET_Joueur1.getText().toString());
+                gameActivity.putExtra("Joueur2", ET_Joueur2.getText().toString());
                 startActivity(gameActivity);
             }
         });
@@ -92,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!ET_Joueur1.getText().toString().equals("") || ET_Joueur2.getText().toString().equals("")){
+                if(ET_Joueur1.getText().toString().isEmpty() || ET_Joueur2.getText().toString().isEmpty()){
                     ET_Joueur2.setVisibility(View.VISIBLE);
                     TV_Joueur2.setVisibility(View.VISIBLE);
 
@@ -112,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(ET_Joueur1.getText().toString().equals("") || ET_Joueur2.getText().toString().equals("")){
+                if(ET_Joueur1.getText().toString().isEmpty() || ET_Joueur2.getText().toString().isEmpty()){
                     BT_Commencer.setEnabled(false);
                 }else{
                     BT_Commencer.setEnabled(true);
