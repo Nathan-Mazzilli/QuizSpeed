@@ -24,6 +24,8 @@ public class GameActivity extends AppCompatActivity {
     private ArrayList<String> ListeQuestion = new ArrayList<>();
     private Button BT_Joueur1;
     private Button BT_Joueur2;
+    private TextView TV_Score1;
+    private TextView TV_Score2;
 
     private void getId(){
         TV_nomJoueur1 = findViewById(R.id.nomJoueur1);
@@ -34,6 +36,8 @@ public class GameActivity extends AppCompatActivity {
         TV_Question2 = findViewById(R.id.gagnantJoueur2);
         BT_Joueur1 = findViewById(R.id.buttonJoueur1);
         BT_Joueur2 = findViewById(R.id.buttonJoueur2);
+        TV_Score1 = findViewById(R.id.ScoreJoueur1);
+        TV_Score2 = findViewById(R.id.ScoreJoueur2);
 
     }
 
@@ -62,12 +66,26 @@ public class GameActivity extends AppCompatActivity {
         BT_rejouer.setVisibility(View.INVISIBLE);
 
         BT_Joueur1.setOnClickListener(new View.OnClickListener()
-
         {
 
             @Override
             public void onClick(View view) {
-                Random rnd = new Random();
+                int ScoreInt = Integer.parseInt(TV_Score1.getText().toString());
+                ScoreInt++;
+                TV_Score1.setText(String.valueOf(ScoreInt));
+
+
+            }
+        });
+
+        BT_Joueur2.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view) {
+                int ScoreInt = Integer.parseInt(TV_Score2.getText().toString());
+                ScoreInt++;
+                TV_Score2.setText(String.valueOf(ScoreInt));
 
 
             }
