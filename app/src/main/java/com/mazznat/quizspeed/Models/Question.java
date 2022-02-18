@@ -14,10 +14,7 @@ public class Question {
         this.reponse = reponse;
     }
 
-    public Question(Cursor cursor){
-        question = cursor.getString(cursor.getColumnIndex("question"));
-        reponse = cursor.getInt(cursor.getColumnIndex("reponse"));
-    }
+
 
     public String getQuestion(){
         return question;
