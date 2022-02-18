@@ -56,6 +56,30 @@ public class GameActivity extends AppCompatActivity {
         ListeQuestion.add("Pytagore est-il grecque ?");
         ListeQuestion.add("Y-a-t'il de l'oxygène dans l'espace ?");
 
+        BT_Joueur1.setEnabled(false);
+        BT_Joueur2.setEnabled(false);
+
+           // TV_Question1.setText(String.valueOf(ListeQuestion.get(1)));
+            //TV_Question2.setText(String.valueOf(ListeQuestion.get(1)));
+
+        for(int I = 5;I<=0;I--) {
+            TV_Question1.setText(String.valueOf(I));
+            TV_Question2.setText(String.valueOf(I));
+        }
+
+                new android.os.Handler().postDelayed(
+                        new Runnable() {
+                            public void run() {
+
+                                BT_Joueur1.setEnabled(true);
+                                BT_Joueur2.setEnabled(true);
+                            }
+                        }, 5000);
+
+
+
+
+
 
 
 
