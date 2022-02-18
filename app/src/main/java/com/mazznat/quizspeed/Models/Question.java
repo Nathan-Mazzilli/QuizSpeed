@@ -1,6 +1,5 @@
 package com.mazznat.quizspeed.Models;
 
-import android.database.Cursor;
 
 public class Question {
 
@@ -13,7 +12,6 @@ public class Question {
         this.question = question;
         this.reponse = reponse;
     }
-
 
 
     public String getQuestion(){

@@ -111,7 +111,6 @@ public class GameActivity extends AppCompatActivity {
                 ScoreInt++;
                 TV_Score2.setText(String.valueOf(ScoreInt));
 
-
             }
         });
     }

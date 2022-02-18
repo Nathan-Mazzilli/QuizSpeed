@@ -1,13 +1,8 @@
 package com.mazznat.quizspeed.Controllers;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.mazznat.quizspeed.Models.Question;
-import com.mazznat.quizspeed.Models.SpeedQuizSQLiteOpenHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
