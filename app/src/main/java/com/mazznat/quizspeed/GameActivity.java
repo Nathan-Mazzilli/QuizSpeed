@@ -95,15 +95,15 @@ public class GameActivity extends AppCompatActivity {
                                 BT_Joueur2.setEnabled(false);
 
                                 if(Integer.parseInt(String.valueOf(TV_Score1.getText())) > Integer.parseInt(String.valueOf(TV_Score2.getText()))){
-                                    TV_Question1.setText("Gagné ");
-                                    TV_Question2.setText("Perdu");
+                                    TV_Question1.setText(R.string.gagne);
+                                    TV_Question2.setText(R.string.perdu);
                                 }
                                 else if(Integer.parseInt(String.valueOf(TV_Score2.getText())) > Integer.parseInt(String.valueOf(TV_Score1.getText()))){
-                                    TV_Question2.setText("Gagné");
-                                    TV_Question1.setText("Perdu");
+                                    TV_Question2.setText(R.string.gagne);
+                                    TV_Question1.setText(R.string.perdu);
                                 }else {
-                                    TV_Question1.setText("Egalité !");
-                                    TV_Question2.setText("Egalité !");
+                                    TV_Question1.setText(R.string.egalite);
+                                    TV_Question2.setText(R.string.egalite);
                                 }
 
                                 handler.removeCallbacks(this);

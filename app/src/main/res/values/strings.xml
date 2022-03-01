@@ -5,4 +5,7 @@
     <string name="nom_joueur2">Nom du deuxième joueur</string>
     <string name="main_strart">Commencer</string>
     <string name="main_ajoutJoueur">Ajouter un joueur</string>
+    <string name="gagne">Gagné !</string>
+    <string name="perdu">Perdu !</string>
+    <string name="egalite">Egalité !</string>
 </resources>

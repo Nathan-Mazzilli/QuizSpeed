@@ -42,10 +42,14 @@ public class QuestionManager {
     private void initQuestionList(ArrayList<Question> questionList){
         questionList.add(new Question("La capitale de l'Australie est Sydney",0));
         questionList.add(new Question("Un octet vaut 7 bits",0));
-        questionList.add(new Question("Le phénomène à l'origine de l'univers est le Big Bong",0));
+        questionList.add(new Question("Le phénomène à l'origine de l'univers est le Big Bang",0));
         questionList.add(new Question("Il n'y a pas d'oxygène dans l'espace",1));
         questionList.add(new Question("Pythagore est grecque",1));
         questionList.add(new Question("Jules César est mort aux ides de Mars",1));
+        questionList.add(new Question("Nami est la seule femme dans l'équipage de Luffy",0));
+        questionList.add(new Question("Une toyota supra à comme moteur un 2JZ",1));
+        questionList.add(new Question("Luffy a mangé le fruit du Gum Gum",1));
+        questionList.add(new Question("Zoro a déja mangé un fruit du démon",0));
     }
 
 
