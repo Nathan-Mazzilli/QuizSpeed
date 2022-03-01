@@ -20,6 +20,11 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
+    Handler handler;
+    Runnable questionRunnable=null;
+    QuestionManager questionManager = new QuestionManager();
+    Question questionEnCours;
+    ArrayList<Question> ListeQuestion = questionManager.getQuestionList();
     private TextView TV_nomJoueur1;
     private TextView TV_nomJoueur2;
     private Button BT_menu;
@@ -30,14 +35,7 @@ public class GameActivity extends AppCompatActivity {
     private Button BT_Joueur2;
     private TextView TV_Score1;
     private TextView TV_Score2;
-
-
-    Handler handler;
-    Runnable questionRunnable=null;
-    QuestionManager questionManager = new QuestionManager();
-    Question questionEnCours;
-
-    ArrayList<Question> ListeQuestion = questionManager.getQuestionList();
+    int v=5;
 
     private void getId(){
         TV_nomJoueur1 = findViewById(R.id.nomJoueur1);
@@ -74,47 +72,64 @@ public class GameActivity extends AppCompatActivity {
         TV_nomJoueur1.setText(Joueur1);
         TV_nomJoueur2.setText(Joueur2);
 
+
         handler = new Handler();
         questionRunnable = new Runnable() {
             @Override
             public void run() {
-                if (questionManager.isEmpty(questionManager.getQuestionList())) {
-                    BT_menu.setVisibility(View.VISIBLE);
-                    BT_rejouer.setVisibility(View.VISIBLE);
-                    BT_Joueur1.setEnabled(false);
-                    BT_Joueur2.setEnabled(false);
-
-                    if(Integer.parseInt(String.valueOf(TV_Score1.getText())) > Integer.parseInt(String.valueOf(TV_Score2.getText()))){
-                        TV_Question1.setText("Gagné ");
-                        TV_Question2.setText("Perdu");
-                    }
-                    else if(Integer.parseInt(String.valueOf(TV_Score2.getText())) > Integer.parseInt(String.valueOf(TV_Score1.getText()))){
-                        TV_Question2.setText("Gagné");
-                        TV_Question1.setText("Perdu");
-                    }else {
-
-                        TV_Question1.setText("Egalité !");
-                        TV_Question2.setText("Egalité !");
-                    }
-
-
+                TV_Question1.setText(String.valueOf(v));
+                TV_Question2.setText(String.valueOf(v));
+                if(v < 1){
                     handler.removeCallbacks(this);
 
-                } else {
-                    Question question = questionManager.getRandomQuestion(ListeQuestion);
-                    String texteQuestion = question.getQuestion();
-                    TV_Question1.setText(texteQuestion);
-                    TV_Question2.setText(texteQuestion);
-                    BT_Joueur1.setEnabled(true);
-                    BT_Joueur2.setEnabled(true);
+                    TV_Question1.setText("Go !");
+                    TV_Question2.setText("Go !");
+                     handler = new Handler();
+                     questionRunnable = new Runnable() {
+                         @Override
+                         public void run() {
+                             if (questionManager.isEmpty(questionManager.getQuestionList())) {
+                                BT_menu.setVisibility(View.VISIBLE);
+                                BT_rejouer.setVisibility(View.VISIBLE);
+                                BT_Joueur1.setEnabled(false);
+                                BT_Joueur2.setEnabled(false);
 
-                    questionEnCours = question;
+                                if(Integer.parseInt(String.valueOf(TV_Score1.getText())) > Integer.parseInt(String.valueOf(TV_Score2.getText()))){
+                                    TV_Question1.setText("Gagné ");
+                                    TV_Question2.setText("Perdu");
+                                }
+                                else if(Integer.parseInt(String.valueOf(TV_Score2.getText())) > Integer.parseInt(String.valueOf(TV_Score1.getText()))){
+                                    TV_Question2.setText("Gagné");
+                                    TV_Question1.setText("Perdu");
+                                }else {
+                                    TV_Question1.setText("Egalité !");
+                                    TV_Question2.setText("Egalité !");
+                                }
 
-                    handler.postDelayed(this, 2000);
+                                handler.removeCallbacks(this);
+
+                             } else {
+                                 Question question = questionManager.getRandomQuestion(ListeQuestion);
+                                 String texteQuestion = question.getQuestion();
+                                 TV_Question1.setText(texteQuestion);
+                                 TV_Question2.setText(texteQuestion);
+                                 BT_Joueur1.setEnabled(true);
+                                 BT_Joueur2.setEnabled(true);
+
+                                 questionEnCours = question;
+
+                                 handler.postDelayed(this, 2000);
+                             }
+                         }
+                     };
+                     handler.postDelayed(questionRunnable, 2000);
+                }else{
+                   v--;
+                    handler.postDelayed(this,1000);
                 }
             }
         };
-        handler.postDelayed(questionRunnable, 2000);
+        handler.postDelayed(questionRunnable,1000);
 
 
         BT_Joueur1.setOnClickListener(new View.OnClickListener() {
