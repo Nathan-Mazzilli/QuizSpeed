@@ -82,8 +82,8 @@ public class GameActivity extends AppCompatActivity {
                 if(v < 1){
                     handler.removeCallbacks(this);
 
-                    TV_Question1.setText("Go !");
-                    TV_Question2.setText("Go !");
+                    TV_Question1.setText(R.string.go);
+                    TV_Question2.setText(R.string.go);
                      handler = new Handler();
                      questionRunnable = new Runnable() {
                          @Override
@@ -161,7 +161,10 @@ public class GameActivity extends AppCompatActivity {
                 if(reponse == 1) {
                     ScoreInt++;
                 }else
+                if(ScoreInt != 0){
                     ScoreInt--;
+                }
+
                 TV_Score2.setText(String.valueOf(ScoreInt));
                 BT_Joueur1.setEnabled(false);
                 BT_Joueur2.setEnabled(false);
