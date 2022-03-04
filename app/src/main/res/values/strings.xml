@@ -9,4 +9,14 @@
     <string name="perdu">Perdu !</string>
     <string name="egalite">Egalité !</string>
     <string name="go">Go !</string>
+    <string name="Question_Vrai">Vrai</string>
+    <string name="Question_reponse">Veuillez saisir si la réponse est vrai</string>
+    <string name="Question_question">Veuillez saisir une question</string>
+    <string name="questions">Questions</string>
+    <string name="param_tre">Paramètre</string>
+    <string name="parametre_temps">Veuillez chosir le temps entre chaque questions</string>
+    <string name="Vitesse">Vitesse entre chaque questions</string>
+    <string name="parametre_nbreQuestion">Veuillez choisir le nombre de question</string>
+    <string name="valider">Valider</string>
+    <string name="valider">Valider</string>
 </resources>

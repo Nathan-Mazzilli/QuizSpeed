@@ -1,18 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".settings_activity"
+        tools:context=".SettingsActivity"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/param_tre"
+                android:textSize="@dimen/main_titre_size"
+                android:textColor="@color/textInputLayoutBorder"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/main_margin_standard"
+                android:text="@string/parametre_temps"
+                android:textSize="@dimen/main_texte_size"
+                android:visibility="visible"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/Vitesse"
+                android:value="3.0"
+                android:stepSize="1"
+                android:valueFrom="1.0"
+                android:valueTo="5.0" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/main_margin_standard"
+                android:text="@string/parametre_nbreQuestion"
+                android:textSize="@dimen/main_texte_size"
+                android:visibility="visible"/>
+            <com.google.android.material.textfield.TextInputEditText
+                app:helperTextEnabled="true"
+                app:helperText="question"
+                android:layout_width="match_parent"
+                android:id="@+id/parametre_questions"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/main_texte_size"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:inputType="number"
+                />
+
+            <Button
+                android:id="@+id/settings_btnValider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="@string/valider"/>
+
+        </LinearLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>

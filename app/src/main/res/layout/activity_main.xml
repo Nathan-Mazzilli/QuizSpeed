@@ -109,7 +109,6 @@
             android:textAlignment="center"
             android:inputType="text"
             />
-o-m
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout

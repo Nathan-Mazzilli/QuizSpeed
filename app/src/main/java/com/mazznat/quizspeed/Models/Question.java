@@ -1,6 +1,8 @@
 package com.mazznat.quizspeed.Models;
 
 
+import android.database.Cursor;
+
 public class Question {
 
     private String question;
@@ -8,9 +10,10 @@ public class Question {
 
     public Question(){};
 
-    public Question(String question,int reponse){
-        this.question = question;
-        this.reponse = reponse;
+
+    public Question(Cursor cursor){
+        question = cursor.getString(cursor.getColumnIndexOrThrow("question"));
+        reponse = cursor.getInt(cursor.getColumnIndexOrThrow("reponse"));
     }
 
 

@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.mazznat.quizspeed.Models.Question;
+
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private Button BT_Ajouter;
     private Button BT_Commencer;
 
+    /**
+     * Prend les ID des objet utilisé.
+     */
     private void getId(){
         TV_Joueur1 = findViewById(R.id.main_TextView1);
         TV_Joueur2 = findViewById(R.id.main_TextView2);
@@ -35,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         BT_Commencer = findViewById(R.id.main_boutonCommencer);
     }
 
+    /**
+     * Rend invisble les joueur
+     */
     private void putInvisible(){
         TV_Joueur1.setVisibility(View.INVISIBLE);
         ET_Joueur1.setVisibility(View.INVISIBLE);
@@ -64,9 +72,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.menu_parametres:
+                Intent settingsActivity = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(settingsActivity);
                 break;
             case R.id.menu_question:
-
+                Intent questionActivity = new Intent(MainActivity.this, QuestionActivity.class);
+                startActivity(questionActivity);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -85,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
         BT_Commencer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(gameActivity);
             }
         });
+
         ET_Joueur1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}

@@ -22,9 +22,8 @@ public class GameActivity extends AppCompatActivity {
 
     Handler handler;
     Runnable questionRunnable=null;
-    QuestionManager questionManager = new QuestionManager();
+
     Question questionEnCours;
-    ArrayList<Question> ListeQuestion = questionManager.getQuestionList();
     private TextView TV_nomJoueur1;
     private TextView TV_nomJoueur2;
     private Button BT_menu;
@@ -37,6 +36,9 @@ public class GameActivity extends AppCompatActivity {
     private TextView TV_Score2;
     int v=5;
 
+    /**
+     * Prend les ID des objets utiilisé
+     */
     private void getId(){
         TV_nomJoueur1 = findViewById(R.id.nomJoueur1);
         TV_nomJoueur2 = findViewById(R.id.nomJoueur2);
@@ -63,6 +65,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         getId();
+        QuestionManager questionManager = new QuestionManager(this);
+        ArrayList<Question> ListeQuestion = questionManager.getQuestionList();
 
         Intent GameActivity = getIntent();
         String Joueur1 = GameActivity.getStringExtra("Joueur1");
@@ -72,7 +76,7 @@ public class GameActivity extends AppCompatActivity {
         TV_nomJoueur1.setText(Joueur1);
         TV_nomJoueur2.setText(Joueur2);
 
-
+        //Decompte
         handler = new Handler();
         questionRunnable = new Runnable() {
             @Override
@@ -84,6 +88,8 @@ public class GameActivity extends AppCompatActivity {
 
                     TV_Question1.setText(R.string.go);
                     TV_Question2.setText(R.string.go);
+
+                    // question
                      handler = new Handler();
                      questionRunnable = new Runnable() {
                          @Override
